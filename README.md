@@ -33,7 +33,7 @@ The streaming chat uses `POST /api/v1/chat/stream`. The MaiStorage RAG system us
 ## Technology
 
 | Component | Technology |
-
+|---|---|
 | API | FastAPI and Uvicorn |
 | Frontend | Streamlit |
 | Database | PostgreSQL 17 and pgvector |
