@@ -1,0 +1,10 @@
+.venv/
+.env
+__pycache__/
+*.py[cod]
+.cache/
+.dist/
+audit/
+data/raw/
+*.log
+ui-*.png

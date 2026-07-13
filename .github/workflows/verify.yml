@@ -1,0 +1,45 @@
+name: verify
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 1 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  source-and-runtime:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - run: docker compose up -d db
+      - name: Wait for PostgreSQL
+        run: |
+          for attempt in {1..30}; do
+            docker compose exec -T db pg_isready -U maistorage -d maistorage && exit 0
+            sleep 2
+          done
+          exit 1
+      - run: python -m ingestion.crawl --log-level WARNING
+      - run: python -m app.index
+      - run: python -m unittest discover -s tests -v
+      - run: python -m evaluations.run
+      - run: docker compose build api
+      - uses: actions/upload-artifact@v4
+        with:
+          name: verification-evidence
+          path: |
+            data/source_registry.json
+            data/last_run.json
+            evaluations/results.json
+      - if: always()
+        run: docker compose down

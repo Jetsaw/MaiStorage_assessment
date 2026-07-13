@@ -1,0 +1,599 @@
+{
+  "executed_at": "2026-07-13T22:58:18.099597+00:00",
+  "corpus_version": "da2cd1a6-984f-5e17-ac87-974e1e45715e",
+  "cases": 65,
+  "passed": 65,
+  "strict_accuracy": 1.0,
+  "route_accuracy": 1.0,
+  "fact_accuracy": 1.0,
+  "citation_accuracy": 1.0,
+  "latency_p50_ms": 35.22,
+  "latency_p95_ms": 76.02,
+  "results": [
+    {
+      "id": "PRODUCT_001",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_lookup",
+      "latency_ms": 43.2
+    },
+    {
+      "id": "PRODUCT_002",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_lookup",
+      "latency_ms": 35.99
+    },
+    {
+      "id": "PRODUCT_003",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_lookup",
+      "latency_ms": 33.81
+    },
+    {
+      "id": "PRODUCT_004",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_lookup",
+      "latency_ms": 33.48
+    },
+    {
+      "id": "COMPARE_001",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_comparison",
+      "latency_ms": 35.92
+    },
+    {
+      "id": "SELECT_001",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_selection",
+      "latency_ms": 39.2
+    },
+    {
+      "id": "ENV_001",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "aidaptiv_environment",
+      "latency_ms": 34.33
+    },
+    {
+      "id": "ENV_002",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "aidaptiv_environment",
+      "latency_ms": 33.88
+    },
+    {
+      "id": "DOC_001",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "document_search",
+      "latency_ms": 293.88
+    },
+    {
+      "id": "DOC_002",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "aidaptiv_environment",
+      "latency_ms": 44.32
+    },
+    {
+      "id": "REFUSE_001",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "unsupported",
+      "latency_ms": 28.11
+    },
+    {
+      "id": "REFUSE_002",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "unsupported",
+      "latency_ms": 30.51
+    },
+    {
+      "id": "PRODUCT_005",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_lookup",
+      "latency_ms": 40.07
+    },
+    {
+      "id": "PRODUCT_006",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_lookup",
+      "latency_ms": 47.25
+    },
+    {
+      "id": "PRODUCT_007",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_lookup",
+      "latency_ms": 41.92
+    },
+    {
+      "id": "PRODUCT_008",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_lookup",
+      "latency_ms": 39.73
+    },
+    {
+      "id": "PRODUCT_009",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_lookup",
+      "latency_ms": 43.5
+    },
+    {
+      "id": "PRODUCT_010",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_lookup",
+      "latency_ms": 43.24
+    },
+    {
+      "id": "PRODUCT_011",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_lookup",
+      "latency_ms": 46.19
+    },
+    {
+      "id": "PRODUCT_012",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_lookup",
+      "latency_ms": 46.74
+    },
+    {
+      "id": "PRODUCT_013",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_lookup",
+      "latency_ms": 34.97
+    },
+    {
+      "id": "PRODUCT_014",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_lookup",
+      "latency_ms": 33.79
+    },
+    {
+      "id": "PRODUCT_015",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_lookup",
+      "latency_ms": 30.6
+    },
+    {
+      "id": "PRODUCT_016",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_lookup",
+      "latency_ms": 32.01
+    },
+    {
+      "id": "PRODUCT_017",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_lookup",
+      "latency_ms": 30.72
+    },
+    {
+      "id": "PRODUCT_018",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_lookup",
+      "latency_ms": 34.06
+    },
+    {
+      "id": "PRODUCT_019",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_lookup",
+      "latency_ms": 31.51
+    },
+    {
+      "id": "PRODUCT_020",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_lookup",
+      "latency_ms": 35.22
+    },
+    {
+      "id": "COMPARE_002",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_comparison",
+      "latency_ms": 30.41
+    },
+    {
+      "id": "COMPARE_003",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_comparison",
+      "latency_ms": 36.52
+    },
+    {
+      "id": "COMPARE_004",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_comparison",
+      "latency_ms": 31.09
+    },
+    {
+      "id": "COMPARE_005",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_comparison",
+      "latency_ms": 35.21
+    },
+    {
+      "id": "COMPARE_006",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_comparison",
+      "latency_ms": 31.81
+    },
+    {
+      "id": "COMPARE_007",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_comparison",
+      "latency_ms": 35.09
+    },
+    {
+      "id": "COMPARE_008",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_comparison",
+      "latency_ms": 33.08
+    },
+    {
+      "id": "SELECT_002",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_selection",
+      "latency_ms": 38.51
+    },
+    {
+      "id": "SELECT_003",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_selection",
+      "latency_ms": 35.79
+    },
+    {
+      "id": "SELECT_004",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_selection",
+      "latency_ms": 33.83
+    },
+    {
+      "id": "SELECT_005",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_selection",
+      "latency_ms": 35.34
+    },
+    {
+      "id": "SELECT_006",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_selection",
+      "latency_ms": 31.2
+    },
+    {
+      "id": "SELECT_007",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_selection",
+      "latency_ms": 38.45
+    },
+    {
+      "id": "SELECT_008",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_selection",
+      "latency_ms": 35.04
+    },
+    {
+      "id": "ENV_003",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "aidaptiv_environment",
+      "latency_ms": 36.29
+    },
+    {
+      "id": "ENV_004",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "aidaptiv_environment",
+      "latency_ms": 32.11
+    },
+    {
+      "id": "ENV_005",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "aidaptiv_environment",
+      "latency_ms": 35.0
+    },
+    {
+      "id": "ENV_006",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "aidaptiv_environment",
+      "latency_ms": 31.97
+    },
+    {
+      "id": "ENV_007",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "aidaptiv_environment",
+      "latency_ms": 35.66
+    },
+    {
+      "id": "ENV_008",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "aidaptiv_environment",
+      "latency_ms": 31.26
+    },
+    {
+      "id": "DOC_003",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "document_search",
+      "latency_ms": 57.55
+    },
+    {
+      "id": "DOC_004",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "document_search",
+      "latency_ms": 59.78
+    },
+    {
+      "id": "DOC_005",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "document_search",
+      "latency_ms": 64.98
+    },
+    {
+      "id": "DOC_006",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "document_search",
+      "latency_ms": 63.4
+    },
+    {
+      "id": "DOC_007",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "document_search",
+      "latency_ms": 61.21
+    },
+    {
+      "id": "DOC_008",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "document_search",
+      "latency_ms": 64.95
+    },
+    {
+      "id": "REFUSE_003",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "unsupported",
+      "latency_ms": 31.82
+    },
+    {
+      "id": "REFUSE_004",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "unsupported",
+      "latency_ms": 32.47
+    },
+    {
+      "id": "REFUSE_005",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "unsupported",
+      "latency_ms": 29.67
+    },
+    {
+      "id": "REFUSE_006",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "unsupported",
+      "latency_ms": 33.18
+    },
+    {
+      "id": "SECURITY_001",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "unsupported",
+      "latency_ms": 28.77
+    },
+    {
+      "id": "SECURITY_002",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "unsupported",
+      "latency_ms": 28.84
+    },
+    {
+      "id": "MULTI_001",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_lookup",
+      "latency_ms": 43.51
+    },
+    {
+      "id": "MULTI_002",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "product_lookup",
+      "latency_ms": 45.36
+    },
+    {
+      "id": "OUT_OF_SCOPE_001",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "document_search",
+      "latency_ms": 76.02
+    },
+    {
+      "id": "OUT_OF_SCOPE_002",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "document_search",
+      "latency_ms": 81.97
+    },
+    {
+      "id": "OUT_OF_SCOPE_003",
+      "passed": true,
+      "route_ok": true,
+      "facts_ok": true,
+      "citation_ok": true,
+      "observed_route": "document_search",
+      "latency_ms": 87.53
+    }
+  ]
+}

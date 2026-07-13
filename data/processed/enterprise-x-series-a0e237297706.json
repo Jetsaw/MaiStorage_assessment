@@ -1,0 +1,53 @@
+{
+  "kind": "html",
+  "url": "https://www.maistorage.com/enterprise-x-series/",
+  "title": "Enterprise X-Series - MaiStorage",
+  "text": "Enterprise X-Series - MaiStorage\nSkip to content\nPerformance X-Series\nPowered by Phison, MaiStorage’s highest performing enterprise-class SSDs are designed for extreme write intensity with vast capacity options allowing for scale and efficiency while reducing operating costs. X-Series comes in the latest form factors and is unmatched in features, giving you custom SSD results with an off-the-shelf buying experience.\nX200Z\nExtreme Speed and Endurance for Caching Workloads\nExplicitly engineered as a high-performance cache SSD, the X200Z delivers uncompromising performance and endurance in a Gen5 SSD architecture. As the latest addition to the X-Series, the X200Z excels with ultra-low latency, ultra-fast write speeds and industry-leading durability, perfectly suited for demanding caching workloads in enterprise environments such as real-time analytics, transactional databases, and AI acceleration and training.\nWith Storage Class Memory (SCM) responsiveness and support for up to 60 Drive Writes Per Day (DWPD), the X200Z is built to thrive under continuous, intensive write operations. Designed for enterprises that demand efficiency, reliability, and performance without compromise, the X200Z sets a new benchmark for enterprise cache SSDs.\nContact us\nDownload brochure\nInterface Specifications\nPCIe 5.0 2x2 (Dual port)\nCapacity\nUp to 3.2TB\nSSD Power Consumption\nActive: 21W\nIdle: 5W\nPerformance\nSeq Read (up to)\n14.8 GB/s\nSeq Write (up to)\n9.5 GB/s\nRandom Read (up to)\n3,100K IOPS\nRandom Write (up to)\n950K IOPS\nX200\nX200 Feature-Rich PCIe Gen5 Enterprise Storage Solutions\nThe X200 exists to support your diverse requirements in a single series. X200 delivers both single-port and dual-port modes while shipping in U.2 2.5″ and E3.S form factors to give your data center reliable and predictable performance that exceeds industry standards.\nContact us\nDownload brochure\nInterface Specifications\nU.2 or E3.S\nPCIe Gen5x4 Dual Port\n1 or 3 DWPD\nCapacity\n1.6 TB up to 30.72 TB\nSSD Power Consumption\nActive: 25W\nIdle: 5W\nPerformance\nSeq Read (up to)\n14.8 GB/s\nSeq Write (up to)\n8.7 GB/s\nRandom Read (up to)\n3,000 KIOPs\nRandom Write (up to)\n900 KIOPs\nX100\nX100 PCIe Gen4 Enterprise SSD\nThe X100 SSD offers unrivaled performance while consuming the least amount of power for its class.\nUtilizing unique and patented CPU architecture, the X100 is available up to 30.72TB at only 21W. X100 is compliant with FIPS-140 standards for cryptographic modules and is available with other security specifications.\nSupport through our customization services allows you to align this solution with your required security standards.\nContact us\nDownload brochure\nInterface Specifications\nU.3\nPCIe Gen4x4 Dual Port\n1 or 3 DWPD\nCapacity\n1.6 TB up to 30.72 TB\nSSD Power Consumption\nActive: 21W\nIdle: 6W\nPerformance\nSeq Read (up to)\n7.4 GB/s\nSeq Write (up to)\n6.9 GB/s\nRandom Read (up to)\n1,750 KIOPs\nRandom Write (up to)\n480 KIOPs\nMalaysia's New Storage Technology Solutions Supplier\nContact",
+  "headings": [
+    "Performance X-Series",
+    "X200Z",
+    "Extreme Speed and Endurance for Caching Workloads",
+    "Interface Specifications",
+    "Capacity",
+    "SSD Power Consumption",
+    "Performance",
+    "X200",
+    "X200 Feature-Rich PCIe Gen5 Enterprise Storage Solutions",
+    "Interface Specifications",
+    "Capacity",
+    "SSD Power Consumption",
+    "Performance",
+    "X100",
+    "X100 PCIe Gen4 Enterprise SSD",
+    "Interface Specifications",
+    "Capacity",
+    "SSD Power Consumption",
+    "Performance"
+  ],
+  "products": [
+    {
+      "name": "X200Z",
+      "description": "Extreme Speed and Endurance for Caching Workloads\nExplicitly engineered as a high-performance cache SSD, the X200Z delivers uncompromising performance and endurance in a Gen5 SSD architecture. As the latest addition to the X-Series, the X200Z excels with ultra-low latency, ultra-fast write speeds and industry-leading durability, perfectly suited for demanding caching workloads in enterprise environments such as real-time analytics, transactional databases, and AI acceleration and training.\nWith Storage Class Memory (SCM) responsiveness and support for up to 60 Drive Writes Per Day (DWPD), the X200Z is built to thrive under continuous, intensive write operations. Designed for enterprises that demand efficiency, reliability, and performance without compromise, the X200Z sets a new benchmark for enterprise cache SSDs.",
+      "interface": "PCIe 5.0 2x2 (Dual port)",
+      "capacity": "Up to 3.2TB",
+      "power": "Active: 21W\nIdle: 5W",
+      "performance": "Seq Read (up to)\n14.8 GB/s\nSeq Write (up to)\n9.5 GB/s\nRandom Read (up to)\n3,100K IOPS\nRandom Write (up to)\n950K IOPS"
+    },
+    {
+      "name": "X200",
+      "description": "X200 Feature-Rich PCIe Gen5 Enterprise Storage Solutions\nThe X200 exists to support your diverse requirements in a single series. X200 delivers both single-port and dual-port modes while shipping in U.2 2.5″ and E3.S form factors to give your data center reliable and predictable performance that exceeds industry standards.",
+      "interface": "U.2 or E3.S\nPCIe Gen5x4 Dual Port\n1 or 3 DWPD",
+      "capacity": "1.6 TB up to 30.72 TB",
+      "power": "Active: 25W\nIdle: 5W",
+      "performance": "Seq Read (up to)\n14.8 GB/s\nSeq Write (up to)\n8.7 GB/s\nRandom Read (up to)\n3,000 KIOPs\nRandom Write (up to)\n900 KIOPs"
+    },
+    {
+      "name": "X100",
+      "description": "X100 PCIe Gen4 Enterprise SSD\nThe X100 SSD offers unrivaled performance while consuming the least amount of power for its class.\nUtilizing unique and patented CPU architecture, the X100 is available up to 30.72TB at only 21W. X100 is compliant with FIPS-140 standards for cryptographic modules and is available with other security specifications.\nSupport through our customization services allows you to align this solution with your required security standards.",
+      "interface": "U.3\nPCIe Gen4x4 Dual Port\n1 or 3 DWPD",
+      "capacity": "1.6 TB up to 30.72 TB",
+      "power": "Active: 21W\nIdle: 6W",
+      "performance": "Seq Read (up to)\n7.4 GB/s\nSeq Write (up to)\n6.9 GB/s\nRandom Read (up to)\n1,750 KIOPs\nRandom Write (up to)\n480 KIOPs\nMalaysia's New Storage Technology Solutions Supplier\nContact"
+    }
+  ]
+}

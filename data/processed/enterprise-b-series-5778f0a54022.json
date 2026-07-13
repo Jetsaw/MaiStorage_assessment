@@ -1,0 +1,39 @@
+{
+  "kind": "html",
+  "url": "https://www.maistorage.com/enterprise-b-series/",
+  "title": "Enterprise B-Series - MaiStorage",
+  "text": "Enterprise B-Series - MaiStorage\nSkip to content\nBoot Drive B-Series\nServer performance starts at the core where applications and background tasks reside. MaiStorage’s B-Series boot drives are designed for reliability and I/O consistency, ensuring optimal results even in high-volume rack-scale environments.\nB100\nB100 Ultimate M.2 Boot Drive for Servers and Workstations\nThe M.2 2280 enterprise SSD, the B100, features fast PCIe Gen4x4 speeds paired with the industry’s latest 3D NAND, delivering industry-leading performance, reliability and efficiency.\nContact us\nDownload brochure\nInterface Specifications\nPCIe Gen4x4 Single Port\nM.2 2280\nCapacity\n480 GB up to 960 GB\nSSD Power Consumption\nActive: 8.5W\nIdle: 3.5W\nPerformance\nSeq Read (up to)\n5.0 GB/s\nSeq Write (up to)\n0.7 GB/s\nRandom Read (up to)\n450 KIOPs\nRandom Write (up to)\n30 KIOPs\nBA50\nBA50 High-Quality SATA Boot Drive for Legacy Systems and System Upgrades\nBA50 is a purpose-built, high-performance boot drive for use in servers or workstations. This series offers faster boot times, improved system responsiveness, and enhanced overall performance.\nContact us\nDownload brochure\nInterface Specifications\nSATA III\nM.2 2280, 2.5\"\nCapacity\n240 GB up to 960 GB\nSSD Power Consumption\nActive: 2.8W\nIdle: 1.3W\nPerformance\nSeq Read (up to)\n530 MB/s\nSeq Write (up to)\n500 MB/s\nRandom Read (up to)\n98 KIOPs\nRandom Write (up to)\n30 KIOPs\nMalaysia's New Storage Technology Solutions Supplier\nContact",
+  "headings": [
+    "Boot Drive B-Series",
+    "B100",
+    "B100 Ultimate M.2 Boot Drive for Servers and Workstations",
+    "Interface Specifications",
+    "Capacity",
+    "SSD Power Consumption",
+    "Performance",
+    "BA50",
+    "BA50 High-Quality SATA Boot Drive for Legacy Systems and System Upgrades",
+    "Interface Specifications",
+    "Capacity",
+    "SSD Power Consumption",
+    "Performance"
+  ],
+  "products": [
+    {
+      "name": "B100",
+      "description": "B100 Ultimate M.2 Boot Drive for Servers and Workstations\nThe M.2 2280 enterprise SSD, the B100, features fast PCIe Gen4x4 speeds paired with the industry’s latest 3D NAND, delivering industry-leading performance, reliability and efficiency.",
+      "interface": "PCIe Gen4x4 Single Port\nM.2 2280",
+      "capacity": "480 GB up to 960 GB",
+      "power": "Active: 8.5W\nIdle: 3.5W",
+      "performance": "Seq Read (up to)\n5.0 GB/s\nSeq Write (up to)\n0.7 GB/s\nRandom Read (up to)\n450 KIOPs\nRandom Write (up to)\n30 KIOPs"
+    },
+    {
+      "name": "BA50",
+      "description": "BA50 High-Quality SATA Boot Drive for Legacy Systems and System Upgrades\nBA50 is a purpose-built, high-performance boot drive for use in servers or workstations. This series offers faster boot times, improved system responsiveness, and enhanced overall performance.",
+      "interface": "SATA III\nM.2 2280, 2.5\"",
+      "capacity": "240 GB up to 960 GB",
+      "power": "Active: 2.8W\nIdle: 1.3W",
+      "performance": "Seq Read (up to)\n530 MB/s\nSeq Write (up to)\n500 MB/s\nRandom Read (up to)\n98 KIOPs\nRandom Write (up to)\n30 KIOPs\nMalaysia's New Storage Technology Solutions Supplier\nContact"
+    }
+  ]
+}

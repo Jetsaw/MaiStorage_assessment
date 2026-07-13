@@ -1,0 +1,343 @@
+{
+  "generated_at": "2026-07-12T22:28:07.658313+00:00",
+  "sources": [
+    {
+      "url": "https://www.maistorage.com/",
+      "kind": "html",
+      "title": "Home - MaiStorage",
+      "content_hash": "ce9f3828ee0ebe3795fe31f13e4d1c6f920a9259fd088491ae7e445858eacc41",
+      "processed_hash": "59b7f1ccbcd639eebdcca938bfcbed832072e5065432cc143415818c3bef7163",
+      "retrieved_at": "2026-07-12T22:26:48.526953+00:00",
+      "raw_path": "data/raw/home-ce9f3828ee0e.html",
+      "processed_path": "data/processed/home-ce9f3828ee0e.json",
+      "page_count": 0,
+      "product_codes": []
+    },
+    {
+      "url": "https://www.maistorage.com/about/",
+      "kind": "html",
+      "title": "About - MaiStorage",
+      "content_hash": "bbdfaaa0cb5468ec356539aa93174ea6eaaa3f22a877af6a8b8b709d71e42712",
+      "processed_hash": "ce9de1f091e4b4ee7b30763415b3c20b49933bacff58e938b7d2b6c4a58b165e",
+      "retrieved_at": "2026-07-12T22:26:35.528915+00:00",
+      "raw_path": "data/raw/about-bbdfaaa0cb54.html",
+      "processed_path": "data/processed/about-bbdfaaa0cb54.json",
+      "page_count": 0,
+      "product_codes": []
+    },
+    {
+      "url": "https://www.maistorage.com/aidaptiv-plus-support/",
+      "kind": "html",
+      "title": "aiDAPTIV+ Support - MaiStorage",
+      "content_hash": "9692a6ee62a64476215b14bd2429d73fb24c9e33b6aa2d30b52f0c5039b10760",
+      "processed_hash": "baf3a05eb068013230aa737fd34e9d76a5e8c7d974c4e71bacfd71ca19158632",
+      "retrieved_at": "2026-07-12T22:26:35.665981+00:00",
+      "raw_path": "data/raw/aidaptiv-plus-support-9692a6ee62a6.html",
+      "processed_path": "data/processed/aidaptiv-plus-support-9692a6ee62a6.json",
+      "page_count": 0,
+      "product_codes": []
+    },
+    {
+      "url": "https://www.maistorage.com/aidaptiv/",
+      "kind": "html",
+      "title": "aiDAPTIV+ - MaiStorage",
+      "content_hash": "6ef452fefea0a68797bc9efa403269606ed086864b478f885debb80ae5fadd56",
+      "processed_hash": "d23a2218722dd89746682e5183bebfa128b3c362103673c89bed9f032edf8e0c",
+      "retrieved_at": "2026-07-12T22:26:45.522922+00:00",
+      "raw_path": "data/raw/aidaptiv-6ef452fefea0.html",
+      "processed_path": "data/processed/aidaptiv-6ef452fefea0.json",
+      "page_count": 0,
+      "product_codes": []
+    },
+    {
+      "url": "https://www.maistorage.com/automotive/",
+      "kind": "html",
+      "title": "Automotive - MaiStorage",
+      "content_hash": "356ecedc03a7e768f491201bcb864edeb7f94c2f7fbfdcc6ca248444c440cfc8",
+      "processed_hash": "e3f7cd162f6b5295debc708169cb61164c97c72c4497980f1e444ec58ae20c64",
+      "retrieved_at": "2026-07-12T22:26:47.264693+00:00",
+      "raw_path": "data/raw/automotive-356ecedc03a7.html",
+      "processed_path": "data/processed/automotive-356ecedc03a7.json",
+      "page_count": 0,
+      "product_codes": []
+    },
+    {
+      "url": "https://www.maistorage.com/careers/",
+      "kind": "html",
+      "title": "Careers - MaiStorage",
+      "content_hash": "f876521c4edae16f42f3f5d014c552f8e24f9091f086b333874891664e13c34c",
+      "processed_hash": "7750d157ef34ce7e8589c4245ebf77bc25c2c019037e5087e7879ddeb8dec7df",
+      "retrieved_at": "2026-07-12T22:26:33.937417+00:00",
+      "raw_path": "data/raw/careers-f876521c4eda.html",
+      "processed_path": "data/processed/careers-f876521c4eda.json",
+      "page_count": 0,
+      "product_codes": []
+    },
+    {
+      "url": "https://www.maistorage.com/enterprise-b-series/",
+      "kind": "html",
+      "title": "Enterprise B-Series - MaiStorage",
+      "content_hash": "5778f0a54022696bc85e8a6071b42e1b81147277205862ddcd8f17533eda9aa4",
+      "processed_hash": "bbf8f15218565d3c7d84f5a6d529d63eb3fb71656925feb733c77a2d1a7d267a",
+      "retrieved_at": "2026-07-12T22:26:42.117051+00:00",
+      "raw_path": "data/raw/enterprise-b-series-5778f0a54022.html",
+      "processed_path": "data/processed/enterprise-b-series-5778f0a54022.json",
+      "page_count": 0,
+      "product_codes": [
+        "B100",
+        "BA50"
+      ]
+    },
+    {
+      "url": "https://www.maistorage.com/enterprise-d-series/",
+      "kind": "html",
+      "title": "Enterprise D-Series - MaiStorage",
+      "content_hash": "51de5734d14b9db9458fdbc307d332b9a36a42b81a886c3cea54e53101b98b95",
+      "processed_hash": "e712d5af54d7ed3a134dad7bba80987edec8287d6b92d67d61ac62a071e90578",
+      "retrieved_at": "2026-07-12T22:26:40.849597+00:00",
+      "raw_path": "data/raw/enterprise-d-series-51de5734d14b.html",
+      "processed_path": "data/processed/enterprise-d-series-51de5734d14b.json",
+      "page_count": 0,
+      "product_codes": [
+        "D205V",
+        "D200V",
+        "D200",
+        "D100"
+      ]
+    },
+    {
+      "url": "https://www.maistorage.com/enterprise-s-series/",
+      "kind": "html",
+      "title": "Enterprise S-Series - MaiStorage",
+      "content_hash": "547b3ec74fd0ff3d75e58c5dd5bcfb369addd00b6f6c231cf6c63fa6f47ea8d8",
+      "processed_hash": "bc676cc7543563365482423ac18fd2d3dd5064e9ebe2762a359dac5642b1d9db",
+      "retrieved_at": "2026-07-12T22:26:44.065873+00:00",
+      "raw_path": "data/raw/enterprise-s-series-547b3ec74fd0.html",
+      "processed_path": "data/processed/enterprise-s-series-547b3ec74fd0.json",
+      "page_count": 0,
+      "product_codes": [
+        "SA50"
+      ]
+    },
+    {
+      "url": "https://www.maistorage.com/enterprise-x-series/",
+      "kind": "html",
+      "title": "Enterprise X-Series - MaiStorage",
+      "content_hash": "a0e23729770685c092bc63c24603d2c1c675a6cd4e04c34c90462be8f03f1164",
+      "processed_hash": "d84cb6190871dca6cabc6ee2642a3d86487232157d711456d0681d9ac279d899",
+      "retrieved_at": "2026-07-12T22:26:39.103137+00:00",
+      "raw_path": "data/raw/enterprise-x-series-a0e237297706.html",
+      "processed_path": "data/processed/enterprise-x-series-a0e237297706.json",
+      "page_count": 0,
+      "product_codes": [
+        "X200Z",
+        "X200",
+        "X100"
+      ]
+    },
+    {
+      "url": "https://www.maistorage.com/enterprise/",
+      "kind": "html",
+      "title": "Enterprise - MaiStorage",
+      "content_hash": "e0d87267ffd8bd2b68d8148213877a29d03226cde659db96ee21dbdf99652e52",
+      "processed_hash": "7078f1b002043bd06cd32b5e5f05fac1bc5c4348ac0d2b271b6cfd36286d31e7",
+      "retrieved_at": "2026-07-12T22:26:36.995331+00:00",
+      "raw_path": "data/raw/enterprise-e0d87267ffd8.html",
+      "processed_path": "data/processed/enterprise-e0d87267ffd8.json",
+      "page_count": 0,
+      "product_codes": []
+    },
+    {
+      "url": "https://www.maistorage.com/wp-content/uploads/2024/09/PascariProductBrochures_B100_080824.pdf",
+      "kind": "pdf",
+      "title": "PascariProductBrochures_B100_080824.ai",
+      "content_hash": "c0bb2db1cdb9cb33f276872686b4eefaadc0eaab89c1af847e1214411519f8fe",
+      "processed_hash": "f432325c6a3ddf8f4eee25eb4908ba8909493648e1a722731a5adf840ac4d44d",
+      "retrieved_at": "2026-07-12T22:28:01.001881+00:00",
+      "raw_path": "data/raw/pascariproductbrochures-b100-080824-c0bb2db1cdb9.pdf",
+      "processed_path": "data/processed/pascariproductbrochures-b100-080824-c0bb2db1cdb9.json",
+      "page_count": 2,
+      "product_codes": []
+    },
+    {
+      "url": "https://www.maistorage.com/wp-content/uploads/2024/09/PascariProductBrochures_BA50_080824.pdf",
+      "kind": "pdf",
+      "title": "PascariProductBrochures_BA50_080824.ai",
+      "content_hash": "24f8f7880810e219128cdb86a2445ab85291b216a5f170d59bc0e011c517fadc",
+      "processed_hash": "b31a648d50ac1b073f11e9aec7b5959c8ca9b0a2e396a8b3980a668fbc1d40c9",
+      "retrieved_at": "2026-07-12T22:28:00.535033+00:00",
+      "raw_path": "data/raw/pascariproductbrochures-ba50-080824-24f8f7880810.pdf",
+      "processed_path": "data/processed/pascariproductbrochures-ba50-080824-24f8f7880810.json",
+      "page_count": 2,
+      "product_codes": []
+    },
+    {
+      "url": "https://www.maistorage.com/wp-content/uploads/2024/09/PascariProductBrochures_SA50_080824.pdf",
+      "kind": "pdf",
+      "title": "PascariProductBrochures_SA50_080824.ai",
+      "content_hash": "5b1772835549b79b088ee527040d1b36ab16b82d2d4ba35f0ec81376f6310ce6",
+      "processed_hash": "78eca382e2ec6a401216dc0939977de3d4bfb1696088c444702f7da071b2a590",
+      "retrieved_at": "2026-07-12T22:28:01.706631+00:00",
+      "raw_path": "data/raw/pascariproductbrochures-sa50-080824-5b1772835549.pdf",
+      "processed_path": "data/processed/pascariproductbrochures-sa50-080824-5b1772835549.json",
+      "page_count": 4,
+      "product_codes": []
+    },
+    {
+      "url": "https://www.maistorage.com/wp-content/uploads/2025/05/AITPC1-PageFlyer-3-10-2025.pdf",
+      "kind": "pdf",
+      "title": "AITPC1 - PageFlyer",
+      "content_hash": "687992b81603d91e71ef86fb8c780ddd49bfa252d51d8515a1a190f9bc721ff8",
+      "processed_hash": "08eb59283aeefc9ae129b905e86b2cf99e05e3e6d22daecca4de860e22d9dbc8",
+      "retrieved_at": "2026-07-12T22:28:05.756217+00:00",
+      "raw_path": "data/raw/aitpc1-pageflyer-3-10-2025-687992b81603.pdf",
+      "processed_path": "data/processed/aitpc1-pageflyer-3-10-2025-687992b81603.json",
+      "page_count": 2,
+      "product_codes": []
+    },
+    {
+      "url": "https://www.maistorage.com/wp-content/uploads/2025/05/IoT-Solution-PageFlyer-3-10-2025.pdf",
+      "kind": "pdf",
+      "title": "IoT Solution - PageFlyer",
+      "content_hash": "d55883538ec8a7238e8f00b6d50e6b548d78d8c28fe210c999ed51c25d22e408",
+      "processed_hash": "754344871cf70098026a1baa8f3c632d0efc9efd4e50d968f5874d923053f546",
+      "retrieved_at": "2026-07-12T22:28:04.328266+00:00",
+      "raw_path": "data/raw/iot-solution-pageflyer-3-10-2025-d55883538ec8.pdf",
+      "processed_path": "data/processed/iot-solution-pageflyer-3-10-2025-d55883538ec8.json",
+      "page_count": 2,
+      "product_codes": []
+    },
+    {
+      "url": "https://www.maistorage.com/wp-content/uploads/2025/05/LLM-Use-Cases-Solution-PageFlyer-3-10-2025.pdf",
+      "kind": "pdf",
+      "title": "LLM Use Cases Solution - PageFlyer",
+      "content_hash": "70533af4d3c07296f46fd3706cce22ad4ff40afc068f45bf86d6368140cae350",
+      "processed_hash": "a2dc8248fb27ef5abc1314244ee5323fa9e60421f62df6cb20d43122db5fd960",
+      "retrieved_at": "2026-07-12T22:28:03.320915+00:00",
+      "raw_path": "data/raw/llm-use-cases-solution-pageflyer-3-10-2025-70533af4d3c0.pdf",
+      "processed_path": "data/processed/llm-use-cases-solution-pageflyer-3-10-2025-70533af4d3c0.json",
+      "page_count": 4,
+      "product_codes": []
+    },
+    {
+      "url": "https://www.maistorage.com/wp-content/uploads/2025/05/PascariProductBrochure_D100_010925.pdf",
+      "kind": "pdf",
+      "title": "2481794_PascariProductBrochure_D100_112224",
+      "content_hash": "d7ce681ca9ee17e93e25b1b524624d94ed2eb643eca75946aa2b7eebbbd946b9",
+      "processed_hash": "f5a91c0cca340d01325b698d25a4fb9746b6a5536e04fe4bae5a3ae9ed899124",
+      "retrieved_at": "2026-07-12T22:27:59.961892+00:00",
+      "raw_path": "data/raw/pascariproductbrochure-d100-010925-d7ce681ca9ee.pdf",
+      "processed_path": "data/processed/pascariproductbrochure-d100-010925-d7ce681ca9ee.json",
+      "page_count": 5,
+      "product_codes": []
+    },
+    {
+      "url": "https://www.maistorage.com/wp-content/uploads/2025/05/PascariProductBrochure_D200V_042325.pdf",
+      "kind": "pdf",
+      "title": "PascariProductBrochure_D200V_042325.ai",
+      "content_hash": "157e2eca0c773a01026f0f81f929d868ebd70c082ae79d6e0a6e6bae3e708b1b",
+      "processed_hash": "11232325441b01e6c4b82ab315d0358d1e318fba6e68e254d31ad91deba3569a",
+      "retrieved_at": "2026-07-12T22:27:59.789178+00:00",
+      "raw_path": "data/raw/pascariproductbrochure-d200v-042325-157e2eca0c77.pdf",
+      "processed_path": "data/processed/pascariproductbrochure-d200v-042325-157e2eca0c77.json",
+      "page_count": 4,
+      "product_codes": []
+    },
+    {
+      "url": "https://www.maistorage.com/wp-content/uploads/2025/05/PascariProductBrochure_D200_032725.pdf",
+      "kind": "pdf",
+      "title": "PascariProductBrochure_D200_032725.ai",
+      "content_hash": "9505a13ac5c24debf90c2897d6d396bb9a63a3172f0cf78dddc4a02a537a8bf4",
+      "processed_hash": "1d52597985075ff6714391fe23b23d777b379b5c7c26644812bc06f3082b55be",
+      "retrieved_at": "2026-07-12T22:27:58.844780+00:00",
+      "raw_path": "data/raw/pascariproductbrochure-d200-032725-9505a13ac5c2.pdf",
+      "processed_path": "data/processed/pascariproductbrochure-d200-032725-9505a13ac5c2.json",
+      "page_count": 3,
+      "product_codes": []
+    },
+    {
+      "url": "https://www.maistorage.com/wp-content/uploads/2025/05/PascariProductBrochure_D205V_042325.pdf",
+      "kind": "pdf",
+      "title": "PascariProductBrochure_D205V_042325.ai",
+      "content_hash": "6a95972a95df95cc447b4c909b4a49648702faafebb7fd37c0ab5305eef72a08",
+      "processed_hash": "109018addddc020899696c5f18bae8ab2f516ca8126d75d3fe6af03620ec6b70",
+      "retrieved_at": "2026-07-12T22:28:00.209137+00:00",
+      "raw_path": "data/raw/pascariproductbrochure-d205v-042325-6a95972a95df.pdf",
+      "processed_path": "data/processed/pascariproductbrochure-d205v-042325-6a95972a95df.json",
+      "page_count": 4,
+      "product_codes": []
+    },
+    {
+      "url": "https://www.maistorage.com/wp-content/uploads/2025/05/PascariProductBrochure_X100_022425.pdf",
+      "kind": "pdf",
+      "title": "PascariProductBrochure_X100_022125.ai",
+      "content_hash": "b89b407aa4a2063ed53ea83630c8afb7dcb1b7244b92b5a7e9a29f0132725703",
+      "processed_hash": "e5b3ce930629156eb802a057e8b2ece758c05a4fcc9e13df4293ed2ef0b8d1b7",
+      "retrieved_at": "2026-07-12T22:27:55.919583+00:00",
+      "raw_path": "data/raw/pascariproductbrochure-x100-022425-b89b407aa4a2.pdf",
+      "processed_path": "data/processed/pascariproductbrochure-x100-022425-b89b407aa4a2.json",
+      "page_count": 3,
+      "product_codes": []
+    },
+    {
+      "url": "https://www.maistorage.com/wp-content/uploads/2025/05/PascariProductBrochure_X200Z_050825.pdf",
+      "kind": "pdf",
+      "title": "PascariProductBrochure_X200Z_050825.ai",
+      "content_hash": "d9b776c8ddd9202e53c5223f6dde66c10cf3c605ea478b867941b9ba33cc6910",
+      "processed_hash": "536b01ab2d7c8298bf62a3eee1ff79bbf7ef6c7df7ad91ec448d5963f9b1fbb9",
+      "retrieved_at": "2026-07-12T22:27:57.450317+00:00",
+      "raw_path": "data/raw/pascariproductbrochure-x200z-050825-d9b776c8ddd9.pdf",
+      "processed_path": "data/processed/pascariproductbrochure-x200z-050825-d9b776c8ddd9.json",
+      "page_count": 2,
+      "product_codes": []
+    },
+    {
+      "url": "https://www.maistorage.com/wp-content/uploads/2025/05/PascariProductBrochure_X200_050725.pdf",
+      "kind": "pdf",
+      "title": "PascariProductBrochure_X200_050725.ai",
+      "content_hash": "18968367b1c1e42e77999132f90c2a79c14c9fd91bc476230152e6a7b2e59544",
+      "processed_hash": "3e4940d4e9177d5238d4184bd0656cc23a8446d8e5b56f05bdeda04f4417468c",
+      "retrieved_at": "2026-07-12T22:27:56.138861+00:00",
+      "raw_path": "data/raw/pascariproductbrochure-x200-050725-18968367b1c1.pdf",
+      "processed_path": "data/processed/pascariproductbrochure-x200-050725-18968367b1c1.json",
+      "page_count": 5,
+      "product_codes": []
+    },
+    {
+      "url": "https://www.maistorage.com/wp-content/uploads/2025/05/Phison-aiDAPTIV-ProSuite-2.0_Install-guide_v1.5.pdf",
+      "kind": "pdf",
+      "title": "Phison aiDAPTIV+ Pro Suite 2.0_Install guide",
+      "content_hash": "33355cd97405b6a9dafc46e33d8c8a558c89fffbe43868d8d4fe381f3d9f3014",
+      "processed_hash": "0329e7d5ccdbe484d89df039af3dd576cda5357473398d01846c362fbbc4c379",
+      "retrieved_at": "2026-07-12T22:27:55.196013+00:00",
+      "raw_path": "data/raw/phison-aidaptiv-prosuite-2-0-install-guide-v1-5-33355cd97405.pdf",
+      "processed_path": "data/processed/phison-aidaptiv-prosuite-2-0-install-guide-v1-5-33355cd97405.json",
+      "page_count": 19,
+      "product_codes": []
+    },
+    {
+      "url": "https://www.maistorage.com/wp-content/uploads/2025/05/Phison-aiDAPTIV-ProSuite-2.0_User-guide_-v1.9-.pdf",
+      "kind": "pdf",
+      "title": "Phison aiDAPTIV+ Pro Suite 2.0_User guide",
+      "content_hash": "339cc9e291689d0f26e427397f32f98252f574a056d3da55eb47eae7ba29fd97",
+      "processed_hash": "96fca6f0612be429b2a29ddc252da08515036d8b365cbca1df38edd68f3dc361",
+      "retrieved_at": "2026-07-12T22:27:45.572434+00:00",
+      "raw_path": "data/raw/phison-aidaptiv-prosuite-2-0-user-guide-v1-9-339cc9e29168.pdf",
+      "processed_path": "data/processed/phison-aidaptiv-prosuite-2-0-user-guide-v1-9-339cc9e29168.json",
+      "page_count": 45,
+      "product_codes": []
+    },
+    {
+      "url": "https://www.maistorage.com/wp-content/uploads/2025/05/aiDAPTIV-Plus1-PageFlyer-3-10-2025.pdf",
+      "kind": "pdf",
+      "title": "aiDAPTIV Plus1 - PageFlyer",
+      "content_hash": "9944ab603efb30b4a3939179ae977b815e3fef8dd56dd7f8f6e4122810f6ea0e",
+      "processed_hash": "3395e87702459d3cbb94aaaf1791062c8a3576eb20aaa545181c0c493b6065a2",
+      "retrieved_at": "2026-07-12T22:28:07.640129+00:00",
+      "raw_path": "data/raw/aidaptiv-plus1-pageflyer-3-10-2025-9944ab603efb.pdf",
+      "processed_path": "data/processed/aidaptiv-plus1-pageflyer-3-10-2025-9944ab603efb.json",
+      "page_count": 2,
+      "product_codes": []
+    }
+  ]
+}

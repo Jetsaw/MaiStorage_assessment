@@ -1,0 +1,11 @@
+.git
+.venv
+.env
+__pycache__
+*.pyc
+.cache
+.dist
+audit
+data/raw
+*.log
+ui-*.png

@@ -1,0 +1,42 @@
+{
+  "finished_at": "2026-07-12T22:28:07.658313+00:00",
+  "status": "published",
+  "source_count": 27,
+  "html_count": 11,
+  "pdf_count": 16,
+  "missing_required_sources": [],
+  "diff": {
+    "added": [],
+    "changed": [
+      "https://www.maistorage.com/",
+      "https://www.maistorage.com/about/",
+      "https://www.maistorage.com/aidaptiv-plus-support/",
+      "https://www.maistorage.com/aidaptiv/",
+      "https://www.maistorage.com/automotive/",
+      "https://www.maistorage.com/careers/",
+      "https://www.maistorage.com/enterprise-b-series/",
+      "https://www.maistorage.com/enterprise-d-series/",
+      "https://www.maistorage.com/enterprise-s-series/",
+      "https://www.maistorage.com/enterprise-x-series/",
+      "https://www.maistorage.com/enterprise/",
+      "https://www.maistorage.com/wp-content/uploads/2024/09/PascariProductBrochures_B100_080824.pdf",
+      "https://www.maistorage.com/wp-content/uploads/2024/09/PascariProductBrochures_BA50_080824.pdf",
+      "https://www.maistorage.com/wp-content/uploads/2024/09/PascariProductBrochures_SA50_080824.pdf",
+      "https://www.maistorage.com/wp-content/uploads/2025/05/AITPC1-PageFlyer-3-10-2025.pdf",
+      "https://www.maistorage.com/wp-content/uploads/2025/05/IoT-Solution-PageFlyer-3-10-2025.pdf",
+      "https://www.maistorage.com/wp-content/uploads/2025/05/LLM-Use-Cases-Solution-PageFlyer-3-10-2025.pdf",
+      "https://www.maistorage.com/wp-content/uploads/2025/05/PascariProductBrochure_D100_010925.pdf",
+      "https://www.maistorage.com/wp-content/uploads/2025/05/PascariProductBrochure_D200V_042325.pdf",
+      "https://www.maistorage.com/wp-content/uploads/2025/05/PascariProductBrochure_D200_032725.pdf",
+      "https://www.maistorage.com/wp-content/uploads/2025/05/PascariProductBrochure_D205V_042325.pdf",
+      "https://www.maistorage.com/wp-content/uploads/2025/05/PascariProductBrochure_X100_022425.pdf",
+      "https://www.maistorage.com/wp-content/uploads/2025/05/PascariProductBrochure_X200Z_050825.pdf",
+      "https://www.maistorage.com/wp-content/uploads/2025/05/PascariProductBrochure_X200_050725.pdf",
+      "https://www.maistorage.com/wp-content/uploads/2025/05/Phison-aiDAPTIV-ProSuite-2.0_Install-guide_v1.5.pdf",
+      "https://www.maistorage.com/wp-content/uploads/2025/05/Phison-aiDAPTIV-ProSuite-2.0_User-guide_-v1.9-.pdf",
+      "https://www.maistorage.com/wp-content/uploads/2025/05/aiDAPTIV-Plus1-PageFlyer-3-10-2025.pdf"
+    ],
+    "unchanged": [],
+    "removed": []
+  }
+}

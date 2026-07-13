@@ -1,0 +1,25 @@
+{
+  "kind": "html",
+  "url": "https://www.maistorage.com/enterprise-s-series/",
+  "title": "Enterprise S-Series - MaiStorage",
+  "text": "Enterprise S-Series - MaiStorage\nSkip to content\nSATA S-Series\nEfficiently manage the power consumption of your legacy servers with high-performance and large-capacity MaiStorage SATA S-Series products, designed to extend the life and capabilities of your existing servers without a complete overhaul of your existing infrastructure.\nSA50\nHigh-Endurance SATA SSD for the Most Demanding Enterprise Applications\nThe SA50 SSD is a best-in-class SATA SSD solution that scales to 15.36TB (SA50V) and up to 3 DWPD (SA50E) to provide a wide variety of options for diverse application and cold storage needs.\nContact us\nDownload brochure\nInterface Specifications\nSATA III\n2.5\"\nCapacity\n480 GB up to 15.36 TB\nSSD Power Consumption\nActive: 5.4W\nIdle: 1.9W\nPerformance\nSeq Read (up to)\n530 MB/s\nSeq Write (up to)\n500 MB/s\nRandom Read (up to)\n98 KIOPs\nRandom Write (up to)\n77 KIOPs\nMalaysia's New Storage Technology Solutions Supplier\nContact",
+  "headings": [
+    "SATA S-Series",
+    "SA50",
+    "High-Endurance SATA SSD for the Most Demanding Enterprise Applications",
+    "Interface Specifications",
+    "Capacity",
+    "SSD Power Consumption",
+    "Performance"
+  ],
+  "products": [
+    {
+      "name": "SA50",
+      "description": "High-Endurance SATA SSD for the Most Demanding Enterprise Applications\nThe SA50 SSD is a best-in-class SATA SSD solution that scales to 15.36TB (SA50V) and up to 3 DWPD (SA50E) to provide a wide variety of options for diverse application and cold storage needs.",
+      "interface": "SATA III\n2.5\"",
+      "capacity": "480 GB up to 15.36 TB",
+      "power": "Active: 5.4W\nIdle: 1.9W",
+      "performance": "Seq Read (up to)\n530 MB/s\nSeq Write (up to)\n500 MB/s\nRandom Read (up to)\n98 KIOPs\nRandom Write (up to)\n77 KIOPs\nMalaysia's New Storage Technology Solutions Supplier\nContact"
+    }
+  ]
+}
