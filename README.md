@@ -142,10 +142,13 @@ python -m evaluations.run_q2_live --provider both
 
 Current checked-in results:
 
-- Automated tests: 28 of 28 passed
-- RAG evaluation: 65 of 65 passed on the versioned test set
+- Automated tests: 36 of 36 passed
+- Deterministic RAG evaluation: 100 of 100 passed on the versioned test set
+- DeepSeek live streaming evaluation: 100 of 100 passed
+- OpenAI live streaming evaluation: 100 of 100 passed
+- Critical hallucinations detected by the implemented checks: 0
 
-Live provider latency and quality depend on the configured account, model and network.
+The frozen live dataset covers product facts, comparisons, selection, aiDAPTIV+, paraphrases, multi-turn memory, nonsense, unsupported requests and prompt injection. Case-level evidence is in `evaluations/qa_100_live_results.json`; the readable summary is in `evaluations/QA_100_REPORT.md`. These results describe this dataset and corpus, not every possible question. Live provider latency and quality depend on the configured account, model and network.
 
 ## Project structure
 
@@ -178,17 +181,6 @@ docker compose up --build -d --force-recreate api ui
 # Stop the application and keep database data
 docker compose down
 ```
-
-## Security
-
-- Keep API keys in `.env`.
-- Do not commit `.env`, logs, raw downloads or screenshots.
-- The browser sends only the provider name, session UUID and message.
-- The API validates inputs and removes provider details from error responses.
-- Failed or interrupted streams do not create partial conversation records.
-- Docker binds local services to `127.0.0.1`.
-
-Add authentication, rate limits, managed secrets, TLS and retention policies before a public production deployment.
 
 ## Data sources
 

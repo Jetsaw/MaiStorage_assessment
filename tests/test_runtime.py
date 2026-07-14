@@ -1,6 +1,6 @@
 import unittest
 
-from app.core import contextualize, heuristic_route, max_capacity_tb, product_codes, select_products
+from app.core import contextualize, heuristic_route, is_nonsense, max_capacity_tb, product_codes, select_products
 
 
 class RuntimeTests(unittest.TestCase):
@@ -12,6 +12,10 @@ class RuntimeTests(unittest.TestCase):
         self.assertEqual(heuristic_route("Which read-intensive candidate supports above 100 TB?")[0], "product_selection")
         self.assertEqual(heuristic_route("Approve the warranty for X200")[0], "unsupported")
         self.assertEqual(heuristic_route("Confirm unpublished compatibility for Windows 11")[0], "unsupported")
+        self.assertEqual(heuristic_route("I want to buy a product but I am not sure what to buy"), ("product_selection", "GENERAL_PRODUCT_SELECTION"))
+        self.assertEqual(heuristic_route("How does D200V differ from D205V?")[0], "product_comparison")
+        self.assertEqual(heuristic_route("asdfgh qwerty zxcvb")[0], "input_clarification")
+        self.assertEqual(heuristic_route("What is the current Bitcoin price?")[0], "document_search")
 
     def test_product_codes_are_normalized(self):
         self.assertEqual(product_codes("Compare x-200 and D 200V"), ["X200", "D200V"])
@@ -24,6 +28,16 @@ class RuntimeTests(unittest.TestCase):
         self.assertIn("B100", contextualize("What interface does it use?", ["Tell me about X200", "What is B100 designed for?"]))
         self.assertEqual(contextualize("What interface does it use?", []), "What interface does it use?")
         self.assertEqual(contextualize("What interface does X200 use?", ["Tell me about B100"]), "What interface does X200 use?")
+        self.assertEqual(
+            contextualize("Something for caching.", ["Help me choose a MaiStorage drive."]),
+            "I need a product for Something for caching.",
+        )
+
+    def test_nonsense_detection_is_narrow(self):
+        self.assertTrue(is_nonsense("???!!!"))
+        self.assertTrue(is_nonsense("huh what idk"))
+        self.assertFalse(is_nonsense("What is B100?"))
+        self.assertFalse(is_nonsense("What is the capital of France?"))
 
     def test_selection_applies_minimum_capacity(self):
         records = [

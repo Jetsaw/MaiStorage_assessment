@@ -85,23 +85,63 @@ def chat_events(request: LLMChatRequest):
             })
             return
 
-        messages = llm_chat.model_messages(request.session_id, request.message)
-        settings = llm_chat.provider_settings(request.provider)
+        try:
+            history = llm_chat.load_messages(request.session_id, limit=20)
+            grounding = ask(request.message, [item["content"] for item in history])
+        except Exception:
+            yield sse("error", {
+                "code": "knowledge_error",
+                "message": "The approved MaiStorage knowledge base is temporarily unavailable.",
+            })
+            return
+
+        sources = llm_chat.evidence_summary(grounding)
+        grounded = bool(sources) and grounding.get("citation_status") == "passed"
+        clarifying = grounding["route"] == "input_clarification" or (
+            grounding["route"] == "product_lookup" and not sources
+        )
+        mode = "grounded_llm" if grounded else "deterministic_clarification" if clarifying else "deterministic_refusal"
+        settings = llm_chat.provider_settings(request.provider) if grounded else {
+            "model": "deterministic-clarification" if clarifying else "deterministic-refusal"
+        }
         answer_parts = []
         yield sse("meta", {
             "request_id": request_id,
             "session_id": request.session_id,
-            "provider": request.provider,
+            "provider": request.provider if grounded else "policy",
             "model": settings["model"],
+            "mode": mode,
         })
-        for text in llm_chat.stream_llm(request.provider, messages):
+        yield sse("evidence", {
+            "run_id": grounding["run_id"],
+            "route": grounding["route"],
+            "reason_code": grounding.get("reason_code"),
+            "citation_status": grounding.get("citation_status"),
+            "sources": sources,
+        })
+
+        if grounded:
+            messages = llm_chat.model_messages(request.session_id, request.message, grounding)
+            deltas = llm_chat.stream_llm(request.provider, messages)
+            saved_provider, saved_model = request.provider, settings["model"]
+        else:
+            deltas = llm_chat.text_deltas(grounding["answer"])
+            saved_provider, saved_model = "policy", settings["model"]
+
+        for text in deltas:
             answer_parts.append(text)
             yield sse("token", {"text": text})
+        if grounded and (repair := llm_chat.grounding_contract_suffix("".join(answer_parts), grounding)):
+            answer_parts.append(repair)
+            yield sse("token", {"text": repair})
+        if grounded and (footer := llm_chat.source_footer(grounding)):
+            answer_parts.append(footer)
+            yield sse("token", {"text": footer})
         answer = "".join(answer_parts).strip()
         if not answer:
             raise RuntimeError("empty_provider_response")
         message_id = llm_chat.save_turn(
-            request.session_id, request.message, answer, request.provider, settings["model"]
+            request.session_id, request.message, answer, saved_provider, saved_model
         )
         yield sse("done", {
             "message_id": message_id,

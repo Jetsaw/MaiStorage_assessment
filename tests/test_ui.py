@@ -22,7 +22,7 @@ class UIRegressionTests(unittest.TestCase):
         self.assertEqual(len(app.dataframe), 3)
         self.assertEqual(
             [(item.label, item.value) for item in app.metric],
-            [("Strict accuracy", "100.0%"), ("Passed", "65/65"), ("Corpus", "da2cd1a6")],
+            [("Strict accuracy", "100.0%"), ("Passed", "100/100"), ("Corpus", "3826d75c")],
         )
 
         next(

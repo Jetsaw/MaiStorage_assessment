@@ -21,7 +21,10 @@ EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "BAAI/bge-small-en-v1.5")
 EMBEDDING_CACHE_DIR = os.getenv("EMBEDDING_CACHE_DIR")
 PRODUCT_RE = re.compile(r"\b(?:X|D|B|BA|SA)\s*-?\s*\d{2,3}[A-Z]?\b", re.IGNORECASE)
 UNSUPPORTED = re.compile(r"\b(price|pricing|stock|inventory|warranty|roadmap|confidential|discount|unpublished compatibility)\b", re.IGNORECASE)
-ENVIRONMENT_TERMS = re.compile(r"\b(ubuntu|nvidia driver|ports?|environment|compatible|install|installation)\b", re.IGNORECASE)
+ENVIRONMENT_TERMS = re.compile(r"\b(ubuntu|(?:nvidia )?driver|ports?|environment|compatible|install|installation)\b", re.IGNORECASE)
+PURCHASE_INTENT = re.compile(r"\b(buy|purchase|choose|looking for|recommend|candidate|which product|which drive|i need)\b", re.IGNORECASE)
+SELECTION_TERMS = re.compile(r"\b(boot|cach\w*|read[ -]intensive|write[ -]intensive|sata|pcie|gen\s*[45]|capacity|\d+(?:\.\d+)?\s*tb|m\.2|u\.2|e1\.s|power|data[ -]cent(?:er|re)|server)\b", re.IGNORECASE)
+DOMAIN_ANCHOR = re.compile(r"\b(maistorage|product|drive|ssd|storage|aidaptiv|pro suite|(?:X|D|B|BA|SA)\s*-?\s*\d{2,3}[A-Z]?)\b", re.IGNORECASE)
 
 
 class AgentState(TypedDict, total=False):
@@ -55,29 +58,46 @@ def product_codes(question: str) -> list[str]:
     return list(dict.fromkeys(re.sub(r"[\s-]", "", match.group()).upper() for match in PRODUCT_RE.finditer(question)))
 
 
+def is_nonsense(question: str) -> bool:
+    text = " ".join(question.casefold().split())
+    if not re.search(r"[a-z]", text):
+        return True
+    return bool(
+        re.fullmatch(r"(?:asdf\w*|qwer\w*|zxcv\w*)(?:\s+(?:asdf\w*|qwer\w*|zxcv\w*))*", text)
+        or text in {"huh what idk", "idk", "huh", "what???"}
+    )
+
+
 def contextualize(question: str, history: list[str] | None = None) -> str:
-    if product_codes(question) or not re.search(r"\b(it|that product|that drive|this product)\b", question, re.IGNORECASE):
+    if product_codes(question):
         return question
-    for previous in reversed(history or []):
-        codes = product_codes(previous)
-        if codes:
-            return f'{question} ("it" refers to {codes[-1]})'
+    history = history or []
+    if re.search(r"\b(it|that product|that drive|this product)\b", question, re.IGNORECASE):
+        for previous in reversed(history):
+            codes = product_codes(previous)
+            if codes:
+                return f'{question} ("it" refers to {codes[-1]})'
+    if SELECTION_TERMS.search(question) and any(PURCHASE_INTENT.search(previous) for previous in history[-3:]):
+        return f"I need a product for {question}"
     return question
 
 
 def heuristic_route(question: str) -> tuple[str, str]:
     lower = question.casefold()
     codes = product_codes(question)
-    if UNSUPPORTED.search(question):
+    unsupported = UNSUPPORTED.search(question)
+    if unsupported and (unsupported.group().casefold() not in {"price", "pricing", "stock", "inventory"} or DOMAIN_ANCHOR.search(question)):
         return "unsupported", "UNSUPPORTED_COMMERCIAL_OR_PRIVATE"
+    if is_nonsense(question):
+        return "input_clarification", "UNCLEAR_INPUT"
     if ENVIRONMENT_TERMS.search(question):
         return "aidaptiv_environment", "INSTALL_ENVIRONMENT_CHECK"
-    if codes and any(word in lower for word in ("compare", "versus", " vs ", "difference")):
+    if codes and any(word in lower for word in ("compare", "versus", " vs ", "difference", "differ")):
         return "product_comparison", "MULTI_PRODUCT_COMPARISON"
-    if any(word in lower for word in ("candidate", "which product", "which drive", "i need", "recommend")):
-        return "product_selection", "REQUIREMENT_FILTER"
     if codes:
         return "product_lookup", "EXACT_PRODUCT_CODE"
+    if PURCHASE_INTENT.search(question):
+        return "product_selection", "REQUIREMENT_FILTER" if SELECTION_TERMS.search(question) else "GENERAL_PRODUCT_SELECTION"
     if any(word in lower for word in ("who is maistorage", "about maistorage", "company")):
         return "company_information", "COMPANY_INFORMATION"
     return "document_search", "TECHNICAL_DOCUMENT_SEARCH"
@@ -252,6 +272,8 @@ def route_node(state: AgentState) -> AgentState:
 def grade_node(state: AgentState) -> AgentState:
     records = state.get("records", [])
     adequate = bool(records)
+    if state["route"] == "product_lookup" and product_codes(state["working_question"]):
+        adequate = True
     if state["route"] in {"document_search", "company_information"} and records:
         adequate = records[0].get("vector_distance", 1) < 0.35
     trace = state.get("trace", []) + [{"event": "evidence_graded", "adequate": adequate, "count": len(records)}]
@@ -288,7 +310,16 @@ def answer_node(state: AgentState) -> AgentState:
         answer = "\n".join(lines)
     elif route in {"product_lookup", "product_comparison", "product_selection"}:
         if not records:
-            answer = "No documented product matches all supplied constraints. Adjust the requirements or ask a MaiStorage solutions engineer."
+            answer = "No documented product matches that code or the supplied constraints. Check the product code or adjust the requirements."
+        elif route == "product_selection" and state.get("reason_code") == "GENERAL_PRODUCT_SELECTION":
+            groups: dict[str, list[str]] = {}
+            for record in records:
+                groups.setdefault(record["category"], []).append(f'**{record["name"]}** [{labels[record["evidence_id"]]}]')
+            lines = ["Documented candidates by intended use:"]
+            for category, names in sorted(groups.items()):
+                lines.append(f'- {category.replace("-", " ").title()}: {", ".join(names)}')
+            lines.append("Tell me your workload, interface, capacity, form factor, or power requirement to narrow these candidates.")
+            answer = "\n".join(lines)
         else:
             lines = ["Documented product evidence:"]
             for record in records:
@@ -301,7 +332,7 @@ def answer_node(state: AgentState) -> AgentState:
     else:
         lines = ["I found the following relevant approved evidence:"]
         for item in evidence[:3]:
-            excerpt = " ".join(item["content"].split())[:500]
+            excerpt = " ".join(item["content"].split())[:800]
             location = f', page {item["page"]}' if item.get("page") else ""
             lines.append(f'- {excerpt} [{item["citation"]}] ({item["source_title"]}{location})')
         answer = "\n".join(lines)
@@ -314,6 +345,15 @@ def refusal_node(state: AgentState) -> AgentState:
         "evidence": [],
         "citation_status": "not_required",
         "trace": state.get("trace", []) + [{"event": "refused", "reason_code": state.get("reason_code", "INSUFFICIENT_EVIDENCE")}],
+    }
+
+
+def clarification_node(state: AgentState) -> AgentState:
+    return {
+        "answer": "I could not identify a clear MaiStorage question. Please rephrase it or include a product code, workload, interface, capacity, or aiDAPTIV+ topic.",
+        "evidence": [],
+        "citation_status": "not_required",
+        "trace": state.get("trace", []) + [{"event": "clarification_requested", "reason_code": "UNCLEAR_INPUT"}],
     }
 
 
@@ -344,12 +384,13 @@ builder.add_node("grade", grade_node)
 builder.add_node("rewrite", rewrite_node)
 builder.add_node("answer", answer_node)
 builder.add_node("refuse", refusal_node)
+builder.add_node("clarify", clarification_node)
 builder.add_node("verify", verify_node)
 builder.add_edge(START, "route")
 builder.add_conditional_edges("route", route_edge, {
     "product_lookup": "product", "product_comparison": "product", "product_selection": "product",
     "aidaptiv_environment": "environment", "company_information": "documents", "document_search": "documents",
-    "unsupported": "refuse",
+    "unsupported": "refuse", "input_clarification": "clarify",
 })
 builder.add_edge("product", "grade")
 builder.add_edge("environment", "grade")
@@ -359,6 +400,7 @@ builder.add_edge("rewrite", "documents")
 builder.add_edge("answer", "verify")
 builder.add_edge("verify", END)
 builder.add_edge("refuse", END)
+builder.add_edge("clarify", END)
 GRAPH = builder.compile()
 
 

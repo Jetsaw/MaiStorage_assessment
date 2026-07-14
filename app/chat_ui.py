@@ -57,9 +57,14 @@ def stream_events(current_session: str, message: str, provider: str, telemetry: 
                 data_lines.append(line[5:].strip())
             elif not line and event:
                 data = json.loads("\n".join(data_lines))
-                telemetry.setdefault("events", []).append(event)
+                if event == "token":
+                    telemetry["text_chunks"] = telemetry.get("text_chunks", 0) + 1
+                else:
+                    telemetry.setdefault("events", []).append(event)
                 if event == "meta":
                     telemetry.update(data)
+                elif event == "evidence":
+                    telemetry["grounding"] = data
                 elif event == "token":
                     telemetry.setdefault("ttft_ms", round((time.perf_counter() - started) * 1000, 2))
                     yield data["text"]
@@ -242,7 +247,7 @@ with chat_tab:
         with title_col:
             st.markdown(
                 '<div class="chat-heading"><h1>Streaming LLM Chat</h1>'
-                '<p>Real provider deltas, PostgreSQL conversation memory, and refresh restoration.</p></div>',
+                '<p>Approved MaiStorage evidence, real provider deltas, and PostgreSQL memory.</p></div>',
                 unsafe_allow_html=True,
             )
         with provider_col:
@@ -265,16 +270,16 @@ with chat_tab:
                 st.markdown("""
                 <div class="empty-chat">
                   <h1>Start conversation</h1>
-
+                  
                 </div>
                 """, unsafe_allow_html=True)
                 prompt_left, prompt_right = st.columns(2)
                 with prompt_left:
-                    if st.button("Explain token streaming in two sentences", width="stretch"):
-                        suggested_prompt = "Explain token streaming in two sentences."
+                    if st.button("I want to buy B100", width="stretch"):
+                        suggested_prompt = "I want to buy B100."
                 with prompt_right:
-                    if st.button("Remember ORBIT for my next question", width="stretch"):
-                        suggested_prompt = "Remember the word ORBIT for my next question."
+                    if st.button("Tell me about BA50", width="stretch"):
+                        suggested_prompt = "What interface and power specifications are documented for BA50?"
 
         st.markdown('<div class="conversation-end-spacer"></div>', unsafe_allow_html=True)
         typed_question = st.chat_input("Send a message", key="chat_prompt", max_chars=4000)
@@ -305,20 +310,34 @@ with chat_tab:
         previous = previous_assistants[-1] if previous_assistants else {}
         inspector_provider = latest_telemetry.get("provider") or previous.get("provider") or provider
         inspector_model = latest_telemetry.get("model") or previous.get("model") or "waiting for first response"
-        event_order = " &rarr; ".join(latest_telemetry.get("events", []))
+        grounding = latest_telemetry.get("grounding", {})
+        event_items = list(latest_telemetry.get("events", []))
+        if latest_telemetry.get("text_chunks"):
+            position = event_items.index("done") if "done" in event_items else len(event_items)
+            event_items.insert(position, f'{latest_telemetry["text_chunks"]} text chunks')
+        event_order = " &rarr; ".join(event_items)
         stored_messages = len(history) + (2 if latest_telemetry.get("events", [])[-1:] == ["done"] else 0)
         st.markdown(f'<div class="citation-row"><strong>Session</strong><br>{current_session[:8]}&hellip;</div>', unsafe_allow_html=True)
         st.markdown(f'<div class="citation-row"><strong>Provider</strong><br>{inspector_provider}</div>', unsafe_allow_html=True)
         st.markdown(f'<div class="citation-row"><strong>Model</strong><br>{inspector_model}</div>', unsafe_allow_html=True)
+        if latest_telemetry:
+            st.markdown(f'<div class="citation-row"><strong>Mode</strong><br>{latest_telemetry.get("mode", "waiting")}</div>', unsafe_allow_html=True)
+        if grounding:
+            st.markdown(f'<div class="citation-row"><strong>Route</strong><br>{grounding.get("route", "unknown")}</div>', unsafe_allow_html=True)
         st.markdown(f'<div class="citation-row"><strong>Persisted messages</strong><br>{stored_messages}</div>', unsafe_allow_html=True)
         if latest_telemetry:
-            st.markdown(f'<div class="citation-row"><strong>Observed events</strong><br>{event_order or "waiting"}</div>', unsafe_allow_html=True)
+            st.markdown(f'<div class="citation-row"><strong>Observed sequence</strong><br>{event_order or "waiting"}</div>', unsafe_allow_html=True)
             st.markdown(f'<div class="citation-row"><strong>Time to first token</strong><br>{latest_telemetry.get("ttft_ms", "n/a")} ms</div>', unsafe_allow_html=True)
             st.markdown(f'<div class="citation-row"><strong>Total latency</strong><br>{latest_telemetry.get("total_latency_ms", "n/a")} ms</div>', unsafe_allow_html=True)
+        if grounding.get("sources"):
+            st.markdown("**Approved sources**")
+            for source in grounding["sources"]:
+                page = f' · page {source["page"]}' if source.get("page") else ""
+                st.markdown(f'- [{source["citation"]}] [{source["title"]}]({source["url"]}){page}')
 
 with product_tab:
     st.subheader("Product catalogue")
-
+    
     try:
         products = api_json("/api/v1/products")["products"]
         selected = st.multiselect("Products", [product["name"] for product in products])

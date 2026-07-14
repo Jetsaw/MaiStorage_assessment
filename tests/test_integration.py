@@ -45,7 +45,6 @@ class IntegrationTests(unittest.TestCase):
         for question in (
             "What is the capital of France?",
             "How do I bake a chocolate cake?",
-            "I want to buy a product but I am not sure what to buy",
         ):
             with self.subTest(question=question):
                 result = ask(question)
@@ -53,6 +52,28 @@ class IntegrationTests(unittest.TestCase):
                 self.assertEqual(result["citation_status"], "not_required")
                 self.assertEqual(result["evidence"], [])
                 self.assertIn("do not contain enough evidence", result["answer"])
+
+    def test_b100_and_ba50_are_resolved_as_maistorage_products(self):
+        b100 = ask("I want to buy B100")
+        self.assertEqual(b100["route"], "product_lookup")
+        self.assertIn("PCIe Gen4x4", b100["answer"])
+        self.assertNotIn("NVIDIA", b100["answer"])
+
+        ba50 = ask("BA50")
+        self.assertEqual(ba50["route"], "product_lookup")
+        self.assertIn("SATA III", ba50["answer"])
+        self.assertIn("2.8W", ba50["answer"])
+
+    def test_general_selection_lists_catalogue_and_nonsense_asks_to_rephrase(self):
+        selection = ask("I want to buy a product but I am not sure what to buy")
+        self.assertEqual(selection["route"], "product_selection")
+        for code in ("B100", "BA50", "D100", "D200", "D200V", "D205V", "SA50", "X100", "X200", "X200Z"):
+            self.assertIn(code, selection["answer"])
+
+        nonsense = ask("asdfgh qwerty zxcvb")
+        self.assertEqual(nonsense["route"], "input_clarification")
+        self.assertIn("rephrase", nonsense["answer"])
+        self.assertEqual(nonsense["evidence"], [])
 
 
 if __name__ == "__main__":
